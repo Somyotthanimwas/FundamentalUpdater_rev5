@@ -1,0 +1,32 @@
+set(CMAKE_SYSTEM_NAME Windows)
+set(CMAKE_SYSTEM_PROCESSOR x86_64)
+
+set(CMAKE_C_COMPILER /usr/bin/x86_64-w64-mingw32-gcc)
+set(CMAKE_CXX_COMPILER /usr/bin/x86_64-w64-mingw32-g++)
+set(CMAKE_RC_COMPILER /usr/bin/x86_64-w64-mingw32-windres)
+
+set(VCPKG_ROOT /home/thanimwas/vcpkg)
+set(VCPKG_TARGET_TRIPLET x64-mingw-static)
+
+set(CMAKE_FIND_ROOT_PATH
+    ${VCPKG_ROOT}/installed/${VCPKG_TARGET_TRIPLET}
+)
+
+set(CMAKE_PREFIX_PATH
+    ${VCPKG_ROOT}/installed/${VCPKG_TARGET_TRIPLET}
+)
+
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
+set(JSONCPP_INCLUDE_DIR
+    ${VCPKG_ROOT}/installed/${VCPKG_TARGET_TRIPLET}/include
+    CACHE PATH "JsonCpp include directory"
+)
+
+set(JSONCPP_LIBRARY
+    ${VCPKG_ROOT}/installed/${VCPKG_TARGET_TRIPLET}/lib/libjsoncpp.a
+    CACHE FILEPATH "JsonCpp library"
+)

@@ -1,0 +1,59 @@
+# =========================
+# Build outputs
+# =========================
+build/
+build-linux-wrong/
+build-win-fixed/
+*.exe
+*.obj
+*.o
+*.a
+*.dll
+*.pdb
+
+# =========================
+# Generated market data
+# =========================
+Data/Fundamental/JSON/
+Data/Fundamental/*.csv
+Data/set-price.csv
+Data/set-price-amibroker.csv
+set-price.csv
+*.csv
+
+# =========================
+# Runtime / temporary files
+# =========================
+*.log
+*.pid
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Windows Zone.Identifier files
+*:Zone.Identifier
+
+# =========================
+# Local profiles / test data
+# =========================
+ChromePriceProfile/
+TEST_AOT/
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# Source backups
+src/*.backup*
+src/*.BACKUP*
+*.backup*
+*.BACKUP*
+
+# Old V4 installer / backup files
+FundamentalUpdater_rev4.iss
+FundamentalUpdater_rev4.iss.backup*
+FundamentalUpdater_rev4_Setup.exe
