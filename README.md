@@ -6,6 +6,30 @@
 
 > **สำคัญ:** V5 เป็นชื่อแพ็กเกจ/Installer ส่วน logic หลักที่ใช้งานจริงยังคงเป็น Price V4, Fundamental V4 และ Excel V4 ที่ผ่านการทดสอบแล้ว
 
+## ⭐ ทำไมคนควรใช้ FundamentalUpdater_rev5
+
+โปรเจกต์นี้สร้างขึ้นสำหรับคนที่ต้องการลดงานซ้ำในการเตรียมข้อมูลหุ้นไทยและส่งข้อมูลต่อเข้าเครื่องมือวิเคราะห์ที่ใช้งานอยู่แล้ว เช่น AmiBroker และ Excel
+
+### จุดเด่นสำหรับผู้ใช้งาน
+
+- **ทำงานเป็น workflow เดียว** ตั้งแต่ข้อมูลราคาจาก SET ไปจนถึง Fundamental และ AmiBroker
+- **ลดงาน Manual** ในขั้นตอนดึงข้อมูล แปลง CSV และส่งข้อมูลเข้า Excel/AmiBroker
+- **รองรับ Fundamental หลายชุดข้อมูล** เช่น Financial, Trading, Historical และ Related Product
+- **AmiBroker ทำงานแบบ hidden/background** ตาม workflow ของระบบ ไม่จำเป็นต้องเปิดหน้าต่างขึ้นมาระหว่างขั้นตอน import
+- **มี `fundamental_v4.csv` เป็นไฟล์หลัก** ทำให้ตรวจสอบและนำข้อมูลไปใช้ต่อได้ง่าย
+- **เชื่อมต่อ FundamentalWeb** เพื่อดูข้อมูลผ่าน Web Dashboard
+- **มี LINE notification** สำหรับติดตามสถานะการทำงานของ workflow
+- **รองรับ Windows x64** และสามารถ build ใหม่จาก source code ได้
+
+### เหมาะกับใคร
+
+- ผู้ใช้ AmiBroker ที่ต้องการข้อมูลหุ้นไทยอัตโนมัติ
+- ผู้ที่ใช้ Excel เป็นส่วนหนึ่งของ workflow วิเคราะห์หุ้น
+- นักพัฒนา/ผู้สนใจที่ต้องการศึกษาการเชื่อมต่อข้อมูล SET กับ Windows automation
+- ผู้ที่ต้องการนำข้อมูล Fundamental ไปต่อยอดเป็น Web Dashboard
+
+> โปรเจกต์นี้เน้น **workflow ที่ใช้งานจริงและตรวจสอบได้** มากกว่าการเป็นเพียงตัวอย่างโค้ด
+
 ## 🔗 Related Web Dashboard
 
 ข้อมูล Fundamental จากระบบนี้ถูกนำไปใช้ต่อในโปรเจกต์ **FundamentalWeb**
@@ -95,10 +119,10 @@ fundamental_v4.csv
 Data/Fundamental/fundamental_v4.csv
 ```
 
-ไฟล์ต้นทางบน Windows ที่ใช้ใน workflow หลัก:
+ไฟล์ติดตั้งบน Windows ที่ใช้ใน workflow หลัก:
 
 ```text
-C:\Program Files\FundamentalUpdater_rev4\Data\Fundamental\fundamental_v4.csv
+C:\Program Files\FundamentalUpdater_rev5\Data\Fundamental\fundamental_v4.csv
 ```
 
 > **กฎสำคัญ:** `fundamental_v4.csv` เป็นไฟล์หลักสำหรับ Fundamental workflow และ Excel Macro 2
@@ -136,7 +160,6 @@ FundamentalUpdater_rev5/
 ├── tools/
 ├── cmake/
 ├── Data/
-│   └── Fundamental/
 └── build-win-fixed/
 ```
 
@@ -421,37 +444,18 @@ LINE notification
 
 ---
 
-## 📌 Current System
+## ❤️ สนับสนุนโปรเจกต์
 
-```text
-Package          FundamentalUpdater_rev5
-Price Logic      Price V4
-Fundamental      Fundamental V4
-Excel             Excel V4
-Main CSV          fundamental_v4.csv
-Symbols           ~869
-Platform          Windows x64
-Build             CMake + MinGW
-Installer         Inno Setup
-AmiBroker         32-bit
-Web               FundamentalWeb
-Web Hosting       Render
-```
+หากโปรเจกต์นี้มีประโยชน์ต่อคุณ สามารถสนับสนุนผู้พัฒนาได้ผ่าน **GitHub Sponsors**
+
+👉 https://github.com/sponsors/Somyotthanimwas
+
+การสนับสนุนช่วยให้สามารถพัฒนา ปรับปรุง และดูแล workflow นี้ต่อไปได้
 
 ---
 
-## 🔗 Repository
+## 📌 Status
 
-https://github.com/Somyotthanimwas/FundamentalUpdater_rev5
+โปรเจกต์นี้เป็นโปรเจกต์ที่พัฒนาต่อเนื่อง โดย source code และ workflow หลักเปิดให้ศึกษาและตรวจสอบได้บน GitHub
 
-Main branch:
-
-```text
-main
-```
-
----
-
-## 📜 License
-
-โปรเจกต์นี้จัดทำเพื่อใช้งานภายใน **Plaifa Engineering** เว้นแต่จะมีการระบุเงื่อนไขการเผยแพร่เพิ่มเติมในภายหลัง
+สำหรับผู้ใช้ทั่วไป แนะนำให้ติดตาม **Releases** เพื่อใช้ชุดติดตั้งที่ผู้พัฒนาระบุว่าเป็น release สำหรับใช้งาน
